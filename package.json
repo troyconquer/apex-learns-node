@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/troyconquer/apex-learns-node/issues"
   },
-  "homepage": "https://github.com/troyconquer/apex-learns-node"
+  "homepage": "https://github.com/troyconquer/apex-learns-node",
+  "dependencies": {
+    "async": "~0.2.10"
+  }
 }

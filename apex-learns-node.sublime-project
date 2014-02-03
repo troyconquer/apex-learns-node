@@ -1,0 +1,28 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": ".",
+			"name": "settings",
+			"folder_exclude_patterns": [
+				"api",
+				"frontend",
+				"node_modules",
+				"dist",
+				".tmp"
+			]
+		},
+		{
+			"name": "api",
+			"path": "api",
+			"folder_exclude_patterns": [
+				"node_modules"
+			]
+		},
+		{
+			"name": "frontend",
+			"path": "frontend"
+		}
+	]
+}
