@@ -6,23 +6,17 @@
 			"path": ".",
 			"name": "settings",
 			"folder_exclude_patterns": [
-				"api",
-				"frontend",
 				"node_modules",
-				"dist",
+				"examples",
 				".tmp"
 			]
 		},
 		{
-			"name": "api",
-			"path": "api",
+			"name": "examples",
+			"path": "examples",
 			"folder_exclude_patterns": [
 				"node_modules"
 			]
-		},
-		{
-			"name": "frontend",
-			"path": "frontend"
 		}
 	]
 }

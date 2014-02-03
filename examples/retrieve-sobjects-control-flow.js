@@ -3,11 +3,13 @@
 var async = require('async');
 
 
-
-function getCampaignsByAccountId( accoundId, cb ) {
+//This is supposed to represent fetching data from a database
+// then doing some processing. setTimeout is the specific
+// abstract to db calls.
+function getCampaignsByAccountId( accountId, cb ) {
 	
 	async.series( [
-		function getCampaigns( accountId, callback ) {
+		function getCampaigns( callback ) {
 			//pretend this is a http request to mongodb
 			accountId = '009';
 
@@ -32,11 +34,12 @@ function getCampaignsByAccountId( accoundId, cb ) {
 				//node callback pattern uses the 1st param of a callback for errors
 				//assume no errors in this example. the timeout simulates read times
 				//from a callout.
+				console.log( 'got campaigns' );
 				callback( null, campaigndata);
 			}, 1000);
 		},
 
-		function getAccountById( accountId, callback ) {
+		function getAccountById( callback ) {
 			//pretend this is a http request to mongodb
 			accountId = '009';
 
@@ -52,18 +55,21 @@ function getCampaignsByAccountId( accoundId, cb ) {
 				//node callback pattern uses the 1st param of a callback for errors
 				//assume no errors in this example. the timeout simulates read times
 				//from a callout.
+				console.log( 'got account data' );
 				callback( null, accountData);
 			}, 1000);
 		}
 	],
 	
-	function callback(err, results){
+	function finish(err, results){
+		console.log( 'got finished' );
 		if ( err ) {
 			console.log( err );
+			cb( err );
 		} else {
 			console.log( results );
+			cb( null, results );
 		}
-
 	});
 }
 
