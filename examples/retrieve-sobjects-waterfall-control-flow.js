@@ -38,6 +38,12 @@ function getCampaignsByAccountId( accountId, cb ) {
 			}, 1000);
 		},
 
+		//++++KEY OBSERVATION++++//
+		//I found this a little confusing when first attempting waterfall.
+		// But that is because I don't totally grasp the callback pattern
+		// at this point (2/4/14). The previous calls the callback with the 1st
+		// param being 'null', but that null does not get passed to the next
+		// task in the list. Why?..
 		function getAccountById( campData, callback ) {
 			console.log( 'waterfalled campaign data: %j', campData);
 
